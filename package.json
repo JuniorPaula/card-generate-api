@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --optimize_for_size --trace-warnings --experimental-json-modules --no-warnings src/index.js",
-    "cluster": "rm -rf output && mkdir -p output && node --optimize_for_size --trace-warnings --experimental-json-modules --no-warnings src/puppeteerCluster.js"
+    "dev": "rm -rf output && mkdir -p output && node --optimize_for_size --trace-warnings --experimental-json-modules --no-warnings src/index.js",
+    "cluster": "rm -rf output && mkdir -p output && node --optimize_for_size --trace-warnings --experimental-json-modules --no-warnings src/usecases/puppeteerCluster.js"
   },
   "keywords": [],
   "author": "JuniorPaula",
@@ -18,6 +18,7 @@
     "prettier": "^2.8.3"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "puppeteer": "^19.6.0",
     "puppeteer-cluster": "^0.23.0",
