@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --optimize_for_size --trace-warnings --experimental-json-modules --no-warnings src/index.js"
+    "dev": "rm -rf output && mkdir -p output && node --optimize_for_size --trace-warnings --experimental-json-modules --no-warnings src/index.js"
   },
   "keywords": [],
   "author": "JuniorPaula",
@@ -15,5 +15,9 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.3"
+  },
+  "dependencies": {
+    "puppeteer": "^19.6.0",
+    "uuid": "^9.0.0"
   }
 }
