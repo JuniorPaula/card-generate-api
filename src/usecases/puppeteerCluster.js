@@ -1,6 +1,7 @@
 import { Cluster } from 'puppeteer-cluster'
 import render from '../utils/render.js'
 import createQueryStringFromObject from '../utils/createQueryString.js'
+import logger from 'pino'
 
 export class PuppeteerClusterUsecase {
   async execute(data) {
@@ -28,7 +29,7 @@ export class PuppeteerClusterUsecase {
       await cluster.close()
       return links
     } catch (err) {
-      console.error(`${pid} has broken! ${err.stack}`)
+      logger().error(`${pid} has broken! ${err.stack}`)
     }
   }
 }

@@ -1,6 +1,7 @@
 import * as url from 'url'
 import { v1 } from 'uuid'
 import { join } from 'path'
+import logger from 'pino'
 
 export default async function render({ page, data: { finalURI, name } }) {
   const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
@@ -15,5 +16,5 @@ export default async function render({ page, data: { finalURI, name } }) {
     printBackground: true,
   })
 
-  console.log('ended', output)
+  logger().info(output)
 }

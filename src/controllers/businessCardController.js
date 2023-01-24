@@ -1,3 +1,4 @@
+import logger from 'pino'
 import { PuppeteerClusterUsecase } from '../usecases/puppeteerCluster.js'
 
 export class BusinessCardController {
@@ -10,7 +11,7 @@ export class BusinessCardController {
 
       return res.status(200).json(links)
     } catch (error) {
-      console.log(error)
+      logger().error(error)
       return res.status(500).json({ error })
     }
   }
